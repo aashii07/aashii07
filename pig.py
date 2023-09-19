@@ -22,7 +22,7 @@ model = keras.Sequential([
     keras.layers.Dense(1)  # Output layer with 1 neuron for regression
 ])
 
-# Define the learning rate (e.g., 0.001) and create an optimizer with it
+# Define the learning rate and create an optimizer with it
 learning_rate = 0.00001
 optimizer = keras.optimizers.Adam(learning_rate=learning_rate)
 
@@ -45,15 +45,5 @@ print(f'Mean Squared Error (MSE): {mse:.2f}')
 print(f'Root Mean Squared Error (RMSE): {rmse:.2f}')
 print(f'Mean Absolute Error (MAE): {mae:.2f}')
 
-
-
-
-# import joblib;
-# joblib.dump(model, 'model.pkl')
-
-import pickle
-
-with open('m.pkl', 'wb') as model_file:
-    pickle.dump(model, model_file)
-
-
+import joblib;
+joblib.dump(model, 'model.pkl')

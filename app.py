@@ -33,7 +33,7 @@ def index():
         ]])
 
         # Make a prediction using the model
-        prediction = model.predict(input_data)[0]  # Extract the prediction from the array
+        prediction = model.predict(input_data)[0][0] # Extract the prediction from the array
 
     return render_template('index.html', prediction=prediction)
 

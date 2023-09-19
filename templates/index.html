@@ -94,7 +94,7 @@
             background-color: #980000; /* Darker red color on hover */
         }
 
-  
+
         .centered-box {
             background-color: rgba(0, 0, 0, 0.9);
             padding: 20px;
@@ -110,12 +110,14 @@
             justify-content: center;
             align-items: center;
         }
-                
     </style>
 </head>
 <body>
     <h1>Wine Quality Prediction</h1>
-    <form method="POST" onsubmit="displayPrediction('{{ prediction }}');  return false;">
+
+    <form method="POST">
+
+        <p>Predicted Quality = {{ prediction }}</p><br>
         <label for="fixed_acidity">Fixed Acidity</label>
         <input type="text" id="fixed_acidity" name="fixed_acidity" required>
         
@@ -150,41 +152,14 @@
         <input type="text" id="alcohol" name="alcohol" required>
 
         <br><br><input type="submit" value="Predict">
-        
     </form>
+    
     <br><br>
 
-    <div class="centered-box" id="messageBox" style="display: none;">
-        
-        <h2>Predicted Wine Quality</h2>
-        <p id="predictionValue"></p>
-        <button id="closeButton">Close</button> <!-- Close button -->
-    </div>
-
-    <script>
-        function displayPrediction(prediction) {
-            const messageBox = document.getElementById("messageBox");
-            const predictionElement = document.getElementById("predictionValue");
-            const closeButton = document.getElementById("closeButton"); // Get the close button
-
-            // Set the prediction value
-            predictionElement.textContent = prediction;
-
-            // Show the message box
-            messageBox.style.display = "block";
-
-            // Add a click event listener to the close button
-            closeButton.addEventListener("click", function () {
-
-                // Refresh the page
-                location.reload();
-            });
-        }
-    </script>
-    
-    
 </body>
 </html>
+
+
 
 
 
